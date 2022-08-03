@@ -26,6 +26,7 @@ const style = {
 function App() {
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
+	const [list, setList] = useState(0);
 	//create todo
 	const createTodo = async (e) => {
 		e.preventDefault(e);
@@ -33,14 +34,18 @@ function App() {
 			alert("You can't add a empty string or longer than 30 char.");
 			return;
 		}
+
 		await addDoc(collection(db, "todos"), {
+			order: list,
 			text: input,
 			completed: false,
 			edited: false,
 			new: true,
 		});
+		setList((e) => (e += 1));
 		setInput("");
 	};
+	console.log(list);
 	//read firebase
 	useEffect(() => {
 		const q = query(collection(db, "todos"));
@@ -53,7 +58,7 @@ function App() {
 		});
 		return () => unsubscribe;
 	}, []);
-	//update firebase
+	//complete firebase
 	const toggleComplete = async (todo) => {
 		await updateDoc(doc(db, "todos", todo.id), {
 			completed: !todo.completed,
@@ -97,6 +102,7 @@ function App() {
 					{todos.map((todo, index) => (
 						<Todo
 							key={index}
+							order={todo.order}
 							todo={todo}
 							toggleComplete={toggleComplete}
 							deleteTodo={deleteTodo}
