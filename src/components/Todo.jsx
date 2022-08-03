@@ -3,13 +3,14 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
 
 const style = {
-	li: `flex justify-between bg-slate-200 p-4 my-2 capitalize`,
-	liComplete: `flex justify-between bg-slate-300 p-4 my-2 capitalize`,
+	li: `flex justify-between bg-slate-200 p-4 mb-2 capitalize`,
+	liComplete: `flex justify-between bg-slate-300 p-4 mb-2 capitalize`,
 	row: `flex`,
 	rowEdited: `flex decoration-sky-500 underline font-semibold`,
 	text: `ml-2 cursor-pointer`,
 	textComplete: `ml-2 cursor-pointer line-through`,
-	buttons: `cursor-pointer flex item-right space-x-3`,
+	buttons: `text-neutral-focus cursor-pointer flex item-right space-x-3`,
+	checkbox: `checkbox checkbox-accent border-slate-500`,
 };
 
 const Todo = ({ todo, toggleComplete, deleteTodo, editTodo }) => {
@@ -17,6 +18,7 @@ const Todo = ({ todo, toggleComplete, deleteTodo, editTodo }) => {
 		<li className={todo.completed ? style.liComplete : style.li}>
 			<div className={todo.edited ? style.rowEdited : style.row}>
 				<input
+					className={style.checkbox}
 					onChange={() => toggleComplete(todo)}
 					type='checkbox'
 					checked={todo.completed ? "checked" : ""}

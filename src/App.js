@@ -13,13 +13,13 @@ import Todo from "./components/Todo";
 import { db } from "./firebase";
 
 const style = {
-	bg: `h-screen w-screen p-4 bg-gradient-to-r from-blue-500 to-cyan-500`,
+	bg: `h-screen w-screen p-4 bg-gradient-to-r from-indigo-900 via-purple-500 to-pink-900`,
 	container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4`,
-	heading: `text-3xl font-bold text-center text-gray-800 p-2`,
-	form: `flex justify-between`,
-	input: `border p-2 w-full text-xl`,
-	button: `border p-4 ml-2 bg-purple-500 text-slate-500 text-white`,
-	count: `text-center p-2`,
+	heading: `text-3xl font-bold text-center text-gray-800 pb-6`,
+	form: `flex justify-between mb-9`,
+	input: `border p-2 w-full text-xl rounded-lg`,
+	button: `border p-4 ml-1 bg-info text-slate-100 hover:text-slate-800 rounded-lg ease-in-out duration-500`,
+	count: `my-4 text-center p-2 text-slate-600 pointer-events-none`,
 	content: `overflow-auto max-h-[300px]`,
 };
 
@@ -110,10 +110,10 @@ function App() {
 						/>
 					))}
 				</ul>
-				{todos.length < 1 ? (
-					<p className={style.count}>Add your first task</p>
+				{todos.length < 2 ? (
+					<p className={style.count}>Add more tasks</p>
 				) : (
-					<p className={style.count}>You have {todos.length} todo</p>
+					<p className={style.count}>Total of {todos.length} todos</p>
 				)}
 			</div>
 		</div>
