@@ -17,8 +17,8 @@ const style = {
 	container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4`,
 	heading: `text-3xl font-bold text-center text-gray-800 pb-6`,
 	form: `flex justify-between mb-9`,
-	input: `border p-2 w-full text-xl rounded-lg`,
-	button: `border p-4 ml-1 bg-info text-slate-100 hover:text-slate-800 rounded-lg ease-in-out duration-500`,
+	input: `border p-2 w-full text-xl rounded-l-lg`,
+	button: `border p-4 ml-0 bg-info text-slate-100 hover:text-slate-800 ease-in-out duration-500 rounded-r-lg`,
 	count: `my-4 text-center p-2 text-slate-600 pointer-events-none`,
 	content: `overflow-auto max-h-[300px]`,
 };

@@ -10,7 +10,7 @@ const style = {
 	text: `ml-2 cursor-pointer`,
 	textComplete: `ml-2 cursor-pointer line-through`,
 	buttons: `text-neutral-focus cursor-pointer flex item-right space-x-3`,
-	checkbox: `checkbox checkbox-accent border-slate-500`,
+	checkbox: `checkbox checkbox-accent border-slate-300`,
 };
 
 const Todo = ({ todo, toggleComplete, deleteTodo, editTodo }) => {
