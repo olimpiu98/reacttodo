@@ -6,6 +6,7 @@ import {
 	updateDoc,
 	addDoc,
 	deleteDoc,
+	orderBy,
 } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -27,6 +28,7 @@ function App() {
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
 	const [list, setList] = useState(0);
+
 	//create todo
 	const createTodo = async (e) => {
 		e.preventDefault(e);
@@ -45,10 +47,10 @@ function App() {
 		setList((e) => (e += 1));
 		setInput("");
 	};
-	console.log(list);
 	//read firebase
 	useEffect(() => {
-		const q = query(collection(db, "todos"));
+		const q = query(collection(db, "todos"), orderBy("order", "desc"));
+
 		const unsubscribe = onSnapshot(q, (querySnapshot) => {
 			let todosArr = [];
 			querySnapshot.forEach((item) => {
