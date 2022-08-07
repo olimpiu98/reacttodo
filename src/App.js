@@ -25,10 +25,10 @@ const style = {
 };
 
 function App() {
+	const date = new Date();
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
-	const [list, setList] = useState(0);
-
+	const [list, setList] = useState(date.getTime());
 	//create todo
 	const createTodo = async (e) => {
 		e.preventDefault(e);
@@ -44,7 +44,7 @@ function App() {
 			edited: false,
 			new: true,
 		});
-		setList((e) => (e += 1));
+		setList((e) => (e = date.getTime()));
 		setInput("");
 	};
 	//read firebase
