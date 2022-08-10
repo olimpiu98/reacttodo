@@ -26,6 +26,7 @@ const style = {
 
 function App() {
 	const date = new Date();
+	const currentDate = `Added in ${date.getDay()}/${date.getDate()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`;
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
 	const [list, setList] = useState(date.getTime());
@@ -43,6 +44,7 @@ function App() {
 			completed: false,
 			edited: false,
 			new: true,
+			time: currentDate,
 		});
 		setList((e) => (e = date.getTime()));
 		setInput("");
@@ -109,6 +111,7 @@ function App() {
 							toggleComplete={toggleComplete}
 							deleteTodo={deleteTodo}
 							editTodo={editTodo}
+							time={todo.time}
 						/>
 					))}
 				</ul>
