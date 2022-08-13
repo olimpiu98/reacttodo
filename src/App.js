@@ -31,8 +31,8 @@ function App() {
 	const [input, setInput] = useState("");
 	const [list, setList] = useState(date.getTime());
 	//create todo
-	const createTodo = async (e) => {
-		e.preventDefault(e);
+	const createTodo = async (event) => {
+		event.preventDefault(event);
 		if (input.length === 0 || input.length > 30) {
 			alert("You can't add a empty string or longer than 30 char.");
 			return;
@@ -46,7 +46,7 @@ function App() {
 			new: true,
 			time: currentDate,
 		});
-		setList((e) => (e = date.getTime()));
+		setList((prev) => (prev = date.getTime()));
 		setInput("");
 	};
 	//read firebase

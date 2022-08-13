@@ -9,9 +9,9 @@ const style = {
 	rowEdited: `flex decoration-sky-500 underline font-semibold`,
 	text: `ml-2 cursor-pointer`,
 	textComplete: `ml-2 cursor-pointer line-through`,
-	buttons: `text-neutral-focus cursor-pointer flex item-right space-x-3`,
+	buttons: `text-slate-700 cursor-pointer flex item-right space-x-3 mb-2 hover:text-neutral-focus`,
 	checkbox: `checkbox checkbox-accent border-slate-300`,
-	time: `flex justify-center cursor-default text-xs mb-1 -translate-y-5`,
+	time: `flex justify-end mr-3 cursor-default text-xs mb-1 -translate-y-5`,
 };
 
 const Todo = ({ todo, toggleComplete, deleteTodo, editTodo, time }) => {
