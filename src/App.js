@@ -17,7 +17,9 @@ const style = {
 
 function App() {
 	const date = new Date();
-	const currentDate = `Added in ${date.getDate()}/${date.getMonth()}/${date.getYear()} at ${date.getHours()}:${date.getMinutes()}`;
+	const currentDate = `Added in ${date.getDate()}/${
+		date.getMonth() + 1
+	}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`;
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
 	const [list, setList] = useState(date.getTime());
