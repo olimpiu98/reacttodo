@@ -1,13 +1,4 @@
-import {
-	query,
-	collection,
-	doc,
-	onSnapshot,
-	updateDoc,
-	addDoc,
-	deleteDoc,
-	orderBy,
-} from "firebase/firestore";
+import { query, collection, doc, onSnapshot, updateDoc, addDoc, deleteDoc, orderBy } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import Todo from "./components/Todo";
@@ -26,7 +17,7 @@ const style = {
 
 function App() {
 	const date = new Date();
-	const currentDate = `Added in ${date.getDay()}/${date.getDate()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`;
+	const currentDate = `Added in ${date.getDate()}/${date.getMonth()}/${date.getYear()} at ${date.getHours()}:${date.getMinutes()}`;
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
 	const [list, setList] = useState(date.getTime());
